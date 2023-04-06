@@ -6,7 +6,7 @@ namespace DAL.Interface
     {
         TRet Add(T entity);
         TRet Update(T entity);
-        TRet Delete(T entity);
+        TRet Delete(TId id);
         T GetById(TId id);
         List<T> GetAll();
     }
