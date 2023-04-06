@@ -9,19 +9,19 @@ namespace DAL
         {
         }
 
-        private DbSet<User> Users { get; set; }
-        private DbSet<Category> Categories { get; set; }
-        private DbSet<DeliveryMan> DeliveryMen { get; set; }
-        private DbSet<Product> Products { get; set; }
-        private DbSet<Order> Orders { get; set; }
-        private DbSet<DeliveryStatus> DeliveryStatuses { get; set; }
-        private DbSet<PaymentMethod> PaymentMethods { get; set; }
-        private DbSet<ProductsOrder> ProductsOrders { get; set; }
-        private DbSet<Company> Companies { get; set; }
-        private DbSet<AccountCashIn> AccountCashINs { get; set; }
-        private DbSet<AccountCashOut> AccountCashOuts { get; set; }
-        private DbSet<Profit> Profits { get; set; }
-        private DbSet<ProductsReview> ProductsReviews { get; set; }
+        internal DbSet<User> Users { get; set; }
+        internal DbSet<Category> Categories { get; set; }
+        internal DbSet<DeliveryMan> DeliveryMen { get; set; }
+        internal DbSet<Product> Products { get; set; }
+        internal DbSet<Order> Orders { get; set; }
+        internal DbSet<DeliveryStatus> DeliveryStatuses { get; set; }
+        internal DbSet<PaymentMethod> PaymentMethods { get; set; }
+        internal DbSet<ProductsOrder> ProductsOrders { get; set; }
+        internal DbSet<Company> Companies { get; set; }
+        internal DbSet<AccountCashIn> AccountCashINs { get; set; }
+        internal DbSet<AccountCashOut> AccountCashOuts { get; set; }
+        internal DbSet<Profit> Profits { get; set; }
+        internal DbSet<ProductsReview> ProductsReviews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
