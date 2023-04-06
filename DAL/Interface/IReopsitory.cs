@@ -8,6 +8,6 @@ namespace DAL.Interface
         TRet Update(T entity);
         TRet Delete(T entity);
         T GetById(TId id);
-        IEnumerable<T> GetAll();
+        List<T> GetAll();
     }
 }
