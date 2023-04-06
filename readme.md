@@ -30,6 +30,9 @@ The application offers the following features:
 9. Ability to view the list of customers and their details.
 10. Ability to assign delivery man to an order.
 
+## Schema
+   ![dbschema](https://i.imgur.com/lF6wmfJ.png)
+
 ## Setup
 
 To run the application, follow these steps:
