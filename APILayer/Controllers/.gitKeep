@@ -1,0 +1,7 @@
+﻿Add Your Controllers here
+Make Subfolders where needed
+EXP: 
+
+|_Controllers
+  |_Home
+    |_HomeController.cs
