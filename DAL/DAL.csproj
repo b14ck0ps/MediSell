@@ -52,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="Migrations\202304060812430_initdb.cs" />
+    <Compile Include="Migrations\202304060812430_initdb.designer.cs">
+      <DependentUpon>202304060812430_initdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountCashIn.cs" />
     <Compile Include="Models\AccountCashOut.cs" />
     <Compile Include="Models\Category.cs" />
@@ -77,6 +82,11 @@
   <ItemGroup>
     <Content Include="Interface\.gitkeep" />
     <Content Include="Repository\.gitkeep" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202304060812430_initdb.resx">
+      <DependentUpon>202304060812430_initdb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
