@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Interface\IOrder.cs" />
     <Compile Include="Interface\IReopsitory.cs" />
     <Compile Include="Migrations\202304060812430_initdb.cs" />
     <Compile Include="Migrations\202304060812430_initdb.designer.cs">
@@ -76,6 +77,7 @@
     <Compile Include="Models\Profit.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\Database.cs" />
   </ItemGroup>

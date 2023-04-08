@@ -1,7 +1,6 @@
 ﻿using DAL.Models;
 using DAL.Repository;
 using DAL.Interface;
-using System.Collections.Generic;
 
 namespace DAL
 {
@@ -11,6 +10,10 @@ namespace DAL
         public static IReopsitory<User, int, bool> GetUserRepository()
         {
             return new UserRepository();
+        }
+        public static IOrder GetOrderRepository()
+        {
+            return new OrderRepository();
         }
     }
 }
