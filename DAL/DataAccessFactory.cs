@@ -10,7 +10,7 @@ namespace DAL
         // returns all repositories from DAL
         public static IReopsitory<User, int, bool> GetCustomerRepository()
         {
-            return new CustomerRepository();
+            return new UserRepository();
         }
     }
 }

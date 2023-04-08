@@ -6,7 +6,7 @@ using DAL.Models;
 
 namespace BLL.Services
 {
-    public static class CustomerServices
+    public static class UserServices
     {
         public static List<UserDto> GetAllCustomers()
         {

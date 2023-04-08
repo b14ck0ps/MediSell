@@ -7,15 +7,15 @@ using BLL.Services;
 
 namespace APILayer.Controllers.CustomerApi
 {
-    public class CustomerController : ApiController
+    public class UserController : ApiController
     {
         [HttpGet]
-        [Route("api/customer")]
+        [Route("api/users")]
         public IHttpActionResult Get()
         {
             try
             {
-                var customers = CustomerServices.GetAllCustomers();
+                var customers = UserServices.GetAllCustomers();
                 return ResponseMessage(customers == null
                     ? Request.CreateResponse(HttpStatusCode.NotFound)
                     : Request.CreateResponse(HttpStatusCode.OK, customers));
@@ -27,12 +27,12 @@ namespace APILayer.Controllers.CustomerApi
         }
 
         [HttpGet]
-        [Route("api/customer/{id}")]
+        [Route("api/user/{id}")]
         public IHttpActionResult Get(int id)
         {
             try
             {
-                var customer = CustomerServices.GetCustomerById(id);
+                var customer = UserServices.GetCustomerById(id);
                 return ResponseMessage(customer == null
                     ? Request.CreateResponse(HttpStatusCode.NotFound)
                     : Request.CreateResponse(HttpStatusCode.OK, customer));
@@ -44,12 +44,12 @@ namespace APILayer.Controllers.CustomerApi
         }
 
         [HttpPost]
-        [Route("api/customer")]
+        [Route("api/user")]
         public IHttpActionResult Post([FromBody] UserDto customer)
         {
             try
             {
-                var isAdded = CustomerServices.AddCustomer(customer);
+                var isAdded = UserServices.AddCustomer(customer);
                 return ResponseMessage(isAdded
                     ? Request.CreateResponse(HttpStatusCode.Created)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));
@@ -62,12 +62,12 @@ namespace APILayer.Controllers.CustomerApi
         }
 
         [HttpPatch]
-        [Route("api/customer")]
+        [Route("api/user")]
         public IHttpActionResult Patch([FromBody] UserDto customer)
         {
             try
             {
-                var isUpdated = CustomerServices.UpdateCustomer(customer);
+                var isUpdated = UserServices.UpdateCustomer(customer);
                 return ResponseMessage(isUpdated
                     ? Request.CreateResponse(HttpStatusCode.OK)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));
@@ -80,12 +80,12 @@ namespace APILayer.Controllers.CustomerApi
         }
 
         [HttpDelete]
-        [Route("api/customer/{id}")]
+        [Route("api/user/{id}")]
         public IHttpActionResult Delete(int id)
         {
             try
             {
-                var isDeleted = CustomerServices.DeleteCustomer(id);
+                var isDeleted = UserServices.DeleteCustomer(id);
                 return ResponseMessage(isDeleted
                     ? Request.CreateResponse(HttpStatusCode.OK)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));
