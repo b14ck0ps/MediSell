@@ -12,5 +12,9 @@ namespace DAL
         {
             return new UserRepository();
         }
+        public static IReopsitory<Company, int, bool> GetCompanyRepository()
+        {
+            return new CompanyRepository();
+        }
     }
 }

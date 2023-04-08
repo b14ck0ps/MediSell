@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\AutoMapperProfile.cs" />
+    <Compile Include="DTOs\CompanyDto.cs" />
     <Compile Include="DTOs\Enums\Gender.cs" />
     <Compile Include="DTOs\Enums\Role.cs" />
     <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CompanyServices.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
