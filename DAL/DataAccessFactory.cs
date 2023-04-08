@@ -8,9 +8,9 @@ namespace DAL
     public static class DataAccessFactory
     {
         // returns all repositories from DAL
-        public static IReopsitory<User, int, bool> GetCustomerRepository()
+        public static IReopsitory<User, int, bool> GetUserRepository()
         {
-            return new CustomerRepository();
+            return new UserRepository();
         }
     }
 }

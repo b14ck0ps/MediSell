@@ -6,7 +6,7 @@ using DAL.Models.Enums;
 
 namespace DAL.Repository
 {
-    public class CustomerRepository : Database, IReopsitory<User, int, bool>
+    public class UserRepository : Database, IReopsitory<User, int, bool>
     {
         public bool Add(User entity)
         {
@@ -32,12 +32,12 @@ namespace DAL.Repository
 
         public User GetById(int id)
         {
-            return Context.Users.FirstOrDefault(u => u.Id == id && u.Role == Role.Customer);
+            return Context.Users.FirstOrDefault(u => u.Id == id);
         }
 
         public List<User> GetAll()
         {
-            return Context.Users.Where(u => u.Role == Role.Customer).ToList();
+            return Context.Users.ToList();
         }
     }
 }
