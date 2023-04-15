@@ -27,10 +27,11 @@ namespace BLL.Services
         public static List<OrderDto> GetAllOrdersByCustomerId(int id)
         {
             var orderRepository = DataAccessFactory.GetOrderRepository();
-            var orders = Mapper.Map(orderRepository.GetAllByCustomerId(id), new List<OrderDto>());
-            return orders;
+            var orders = orderRepository.GetAll();
+            var ordersByCustomerId = orders.Where(o => o.OrderedBy == id).Select(Mapper.Map<OrderDto>).ToList();
+            return ordersByCustomerId;
         }
-        
+
         public static bool AddOrder(OrderDto order)
         {
             var orderRepository = DataAccessFactory.GetOrderRepository();
@@ -51,10 +52,6 @@ namespace BLL.Services
             return orderRepository.Delete(id);
         }
 
-        public static bool DeleteOrderByCustomerId(int id)
-        {
-            var orderRepository = DataAccessFactory.GetOrderRepository();
-            return orderRepository.DeleteByCustomerId(id);
-        }
+        private static bool IsCustomerExist(int id) => DataAccessFactory.GetUserRepository().GetById(id) != null;
     }
 }

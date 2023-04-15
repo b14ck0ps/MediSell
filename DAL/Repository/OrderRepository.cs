@@ -5,7 +5,7 @@ using DAL.Models;
 
 namespace DAL.Repository
 {
-    public class OrderRepository : Database, IOrder
+    public class OrderRepository : Database, IReopsitory<Order, int, bool>
     {
         public bool Add(Order entity)
         {
@@ -32,17 +32,6 @@ namespace DAL.Repository
         public Order GetById(int id) => Context.Orders.FirstOrDefault(o => o.Id == id);
 
         public List<Order> GetAll() => Context.Orders.ToList();
-
-        public List<Order> GetAllByCustomerId(int id) =>
-            IsCustomerExist(id) ? Context.Orders.Where(o => o.OrderedBy == id).ToList() : null;
-
-        public bool DeleteByCustomerId(int id) /**/
-        {
-            if (!IsCustomerExist(id)) return false;
-            var orders = GetAllByCustomerId(id);
-            Context.Orders.RemoveRange(orders);
-            return Context.SaveChanges() > 0;
-        }
 
         private static bool IsCustomerExist(int id) => DataAccessFactory.GetUserRepository().GetById(id) != null;
     }
