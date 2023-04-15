@@ -11,8 +11,26 @@ namespace APILayer.Controllers
 {
     public class CompanyController : ApiController
     {
+        [HttpGet]
+        [Route("api/companies")]
+        public IHttpActionResult Get()
+        {
+            try
+            {
+                var companies = CompanyServices.GetAllCompany();
+                return ResponseMessage(companies == null
+                    ? Request.CreateResponse(HttpStatusCode.NotFound)
+                    : Request.CreateResponse(HttpStatusCode.OK, companies));
+            }
+            catch(Exception e)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, e.Message));
+            }
+        }
+
+        //addCompany
         [HttpPost]
-        [Route("api/company")]
+        [Route("api/addcompany")]
         public IHttpActionResult Post([FromBody] CompanyDto company)
         {
             try
@@ -28,5 +46,7 @@ namespace APILayer.Controllers
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, e.Message));
             }
         }
+
+
     }
 }
