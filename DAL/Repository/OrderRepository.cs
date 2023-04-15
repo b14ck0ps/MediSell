@@ -29,20 +29,12 @@ namespace DAL.Repository
             return Context.SaveChanges() > 0;
         }
 
-        public Order GetById(int id)
-        {
-            return Context.Orders.FirstOrDefault(o => o.Id == id);
-        }
+        public Order GetById(int id) => Context.Orders.FirstOrDefault(o => o.Id == id);
 
-        public List<Order> GetAll()
-        {
-            return Context.Orders.ToList();
-        }
+        public List<Order> GetAll() => Context.Orders.ToList();
 
-        public List<Order> GetAllByCustomerId(int id)
-        {
-            return IsCustomerExist(id) ? Context.Orders.Where(o => o.OrderedBy == id).ToList() : null;
-        }
+        public List<Order> GetAllByCustomerId(int id) =>
+            IsCustomerExist(id) ? Context.Orders.Where(o => o.OrderedBy == id).ToList() : null;
 
         public bool DeleteByCustomerId(int id) /**/
         {

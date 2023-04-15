@@ -2,7 +2,6 @@
 using System.Linq;
 using DAL.Interface;
 using DAL.Models;
-using DAL.Models.Enums;
 
 namespace DAL.Repository
 {
@@ -30,14 +29,8 @@ namespace DAL.Repository
             return Context.SaveChanges() > 0;
         }
 
-        public User GetById(int id)
-        {
-            return Context.Users.FirstOrDefault(u => u.Id == id);
-        }
+        public User GetById(int id) => Context.Users.FirstOrDefault(u => u.Id == id);
 
-        public List<User> GetAll()
-        {
-            return Context.Users.ToList();
-        }
+        public List<User> GetAll() => Context.Users.ToList();
     }
 }
