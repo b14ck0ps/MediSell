@@ -8,7 +8,7 @@ namespace DAL
     {
         // returns all repositories from DAL
         public static IReopsitory<User, int, bool> GetUserRepository() => new UserRepository();
-
         public static IOrder GetOrderRepository() => new OrderRepository();
+        public static IReopsitory<ProductsOrder, int, bool> GetProductOrderRepository() => new ProductOrderRepository();
     }
 }
