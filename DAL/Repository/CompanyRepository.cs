@@ -18,22 +18,27 @@ namespace DAL.Repository
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var company = GetById(id);
+            if (company == null) return false;
+            Context.Companies.Remove(company);
+            return Context.SaveChanges() > 0;
         }
-
         public List<Company> GetAll()
         {
-            throw new NotImplementedException();
+            return Context.Companies.ToList();
         }
 
         public Company GetById(int id)
         {
-            throw new NotImplementedException();
+            return Context.Companies.FirstOrDefault(c => c.Id == id);
         }
 
         public bool Update(Company entity)
         {
-            throw new NotImplementedException();
+            var company = GetById(entity.Id);
+            if (company == null) return false;
+            Context.Entry(company).CurrentValues.SetValues(entity);
+            return Context.SaveChanges() > 0;
         }
     }
 }
