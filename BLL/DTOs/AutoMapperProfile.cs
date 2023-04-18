@@ -15,6 +15,9 @@ namespace BLL.DTOs
 
             CreateMap<ProductsOrder, ProductsOrderDto>();
             CreateMap<ProductsOrderDto, ProductsOrder>();
+
+            CreateMap<DeliveryMan, DeliveryManDto>();
+            CreateMap<DeliveryManDto, DeliveryMan>();
         }
     }
 }
