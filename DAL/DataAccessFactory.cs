@@ -11,5 +11,6 @@ namespace DAL
         public static IReopsitory<Order, int, bool> GetOrderRepository() => new OrderRepository();
         public static IReopsitory<ProductsOrder, int, bool> GetProductOrderRepository() => new ProductOrderRepository();
         public static IReopsitory<Profit, int, bool> GetProfitRepository() => new ProfitRepository();
+        public static IReopsitory<AccountCashIn, int, bool> GetAccountCashInRepository() => new AccountCashInRepository();
     }
 }

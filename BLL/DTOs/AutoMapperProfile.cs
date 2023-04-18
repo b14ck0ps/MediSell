@@ -18,6 +18,9 @@ namespace BLL.DTOs
 
             CreateMap<Profit, ProfitDto>();
             CreateMap<ProfitDto, Profit>();
+
+            CreateMap<AccountCashIn, AccountCashInDto>();
+            CreateMap<AccountCashInDto, AccountCashIn>();
         }
     }
 }
