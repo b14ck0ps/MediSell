@@ -21,6 +21,9 @@ namespace BLL.DTOs
 
             CreateMap<AccountCashIn, AccountCashInDto>();
             CreateMap<AccountCashInDto, AccountCashIn>();
+
+            CreateMap<AccountCashOut, AccountCashOutDto>();
+            CreateMap<AccountCashOutDto, AccountCashOut>();
         }
     }
 }

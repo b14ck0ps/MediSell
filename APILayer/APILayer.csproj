@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountCashInController.cs" />
+    <Compile Include="Controllers\AccountCashOutController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductOrderController.cs" />
     <Compile Include="Controllers\ProfitController.cs" />
