@@ -11,7 +11,7 @@ namespace APILayer.Controllers
 {
     public class CategoryController : ApiController
     {
-        //addCompany
+       
         [HttpPost]
         [Route("api/category")]
         public IHttpActionResult Post([FromBody] CategoryDto category)

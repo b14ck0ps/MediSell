@@ -35,7 +35,7 @@ namespace APILayer.Controllers
         {
             try
             {
-                var company = CompanyServices.GetcompanyById(id);
+                var company = CompanyServices.GetCompanyById(id);
                 return ResponseMessage(company == null
                     ? Request.CreateResponse(HttpStatusCode.NotFound)
                     : Request.CreateResponse(HttpStatusCode.OK, company));
@@ -53,7 +53,7 @@ namespace APILayer.Controllers
         {
             try
             {
-                var isAdded = CompanyServices.Addcompany(company);
+                var isAdded = CompanyServices.AddCompany(company);
                 return ResponseMessage(isAdded
                     ? Request.CreateResponse(HttpStatusCode.Created)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));
@@ -71,7 +71,7 @@ namespace APILayer.Controllers
         {
             try
             {
-                var isUpdated = CompanyServices.Updatecompany(company);
+                var isUpdated = CompanyServices.UpdateCompany(company);
                 return ResponseMessage(isUpdated
                     ? Request.CreateResponse(HttpStatusCode.OK)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));
@@ -89,7 +89,7 @@ namespace APILayer.Controllers
         {
             try
             {
-                var isDeleted = CompanyServices.Deleteuser(id);
+                var isDeleted = CompanyServices.DeleteCompany(id);
                 return ResponseMessage(isDeleted
                     ? Request.CreateResponse(HttpStatusCode.OK)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));
