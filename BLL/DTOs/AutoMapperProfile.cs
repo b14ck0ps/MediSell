@@ -9,6 +9,7 @@ namespace BLL.DTOs
         {
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
+
             CreateMap<Company, CompanyDto>();
             CreateMap<CompanyDto, Company>();
 
@@ -17,6 +18,9 @@ namespace BLL.DTOs
 
             CreateMap<ProductsOrder, ProductsOrderDto>();
             CreateMap<ProductsOrderDto, ProductsOrder>();
+
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
         }
     }
 }
