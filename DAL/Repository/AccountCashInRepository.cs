@@ -1,10 +1,7 @@
-﻿using DAL.Interface;
-using DAL.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DAL.Interface;
+using DAL.Models;
 
 namespace DAL.Repository
 {
@@ -18,9 +15,9 @@ namespace DAL.Repository
 
         public bool Delete(int id)
         {
-            var CashIn = GetById(id);
-            if (CashIn == null) return false;
-            Context.AccountCashINs.Remove(CashIn);
+            var cashIn = GetById(id);
+            if (cashIn == null) return false;
+            Context.AccountCashINs.Remove(cashIn);
             return Context.SaveChanges() > 0;
         }
 
@@ -33,11 +30,10 @@ namespace DAL.Repository
 
         public bool Update(AccountCashIn entity)
         {
-            var CashIn = GetById(entity.Id);
-            if (CashIn == null) return false;
-            Context.Entry(CashIn).CurrentValues.SetValues(entity);
+            var cashIn = GetById(entity.Id);
+            if (cashIn == null) return false;
+            Context.Entry(cashIn).CurrentValues.SetValues(entity);
             return Context.SaveChanges() > 0;
         }
-
     }
 }

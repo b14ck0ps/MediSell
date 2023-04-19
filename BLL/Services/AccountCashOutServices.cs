@@ -1,12 +1,8 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using BLL.DTOs;
 using DAL;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -14,39 +10,37 @@ namespace BLL.Services
     {
         public static List<AccountCashOutDto> GetAllAccountCashOuts()
         {
-            var AccountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
-            var CashOut = Mapper.Map(AccountCashOutRepository.GetAll(), new List<AccountCashOutDto>());
-            return CashOut;
+            var accountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
+            var cashOut = Mapper.Map(accountCashOutRepository.GetAll(), new List<AccountCashOutDto>());
+            return cashOut;
         }
 
         public static AccountCashOutDto GetAccountCashOutById(int id)
         {
-            var AccountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
-            var CashOut = Mapper.Map(AccountCashOutRepository.GetById(id), new AccountCashOutDto());
-            return CashOut;
+            var accountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
+            var cashOut = Mapper.Map(accountCashOutRepository.GetById(id), new AccountCashOutDto());
+            return cashOut;
         }
 
-        public static bool AddAccountCashOut(AccountCashOutDto AccountCashOut)
+        public static bool AddAccountCashOut(AccountCashOutDto accountCashOutDto)
         {
-            var AccountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
-            var AccountCashOutToAdd = Mapper.Map(AccountCashOut, new AccountCashOut());
-            return AccountCashOutRepository.Add(AccountCashOutToAdd);
+            var accountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
+            var accountCashOutToAdd = Mapper.Map(accountCashOutDto, new AccountCashOut());
+            return accountCashOutRepository.Add(accountCashOutToAdd);
         }
 
-        public static bool UpdateAccountCashOut(AccountCashOutDto AccountCashOut)
+        public static bool UpdateAccountCashOut(AccountCashOutDto accountCashOutDto)
         {
-            var AccountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
-            var AccountCashOutToUpdate = Mapper.Map(AccountCashOut, new AccountCashOut());
-            return AccountCashOutRepository.Update(AccountCashOutToUpdate);
+            var accountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
+            var accountCashOutToUpdate = Mapper.Map(accountCashOutDto, new AccountCashOut());
+            return accountCashOutRepository.Update(accountCashOutToUpdate);
         }
 
 
         public static bool DeleteAccountCashOut(int id)
         {
-            var AccountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
-            return AccountCashOutRepository.Delete(id);
+            var accountCashOutRepository = DataAccessFactory.GetAccountCashOutRepository();
+            return accountCashOutRepository.Delete(id);
         }
-
-
     }
 }

@@ -1,12 +1,8 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using BLL.DTOs;
 using DAL;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -14,8 +10,8 @@ namespace BLL.Services
     {
         public static List<ProfitDto> GetAllProfits()
         {
-            var ProfitRepository = DataAccessFactory.GetProfitRepository();
-            var profit = Mapper.Map(ProfitRepository.GetAll(), new List<ProfitDto>());
+            var profitRepository = DataAccessFactory.GetProfitRepository();
+            var profit = Mapper.Map(profitRepository.GetAll(), new List<ProfitDto>());
             return profit;
         }
 
@@ -47,9 +43,5 @@ namespace BLL.Services
             var profitRepository = DataAccessFactory.GetProfitRepository();
             return profitRepository.Delete(id);
         }
-
-
-
-
     }
 }

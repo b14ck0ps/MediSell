@@ -1,11 +1,9 @@
-﻿using BLL.DTOs;
-using BLL.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BLL.DTOs;
+using BLL.Services;
 
 namespace APILayer.Controllers
 {
@@ -17,10 +15,10 @@ namespace APILayer.Controllers
         {
             try
             {
-                var CashOut = AccountCashOutServices.GetAllAccountCashOuts();
-                return ResponseMessage(CashOut == null
+                var cashOuts = AccountCashOutServices.GetAllAccountCashOuts();
+                return ResponseMessage(cashOuts == null
                     ? Request.CreateResponse(HttpStatusCode.NotFound)
-                    : Request.CreateResponse(HttpStatusCode.OK, CashOut));
+                    : Request.CreateResponse(HttpStatusCode.OK, cashOuts));
             }
             catch (Exception e)
             {
@@ -35,10 +33,10 @@ namespace APILayer.Controllers
         {
             try
             {
-                var CashOut = AccountCashOutServices.GetAccountCashOutById(id);
-                return ResponseMessage(CashOut == null
+                var cashOut = AccountCashOutServices.GetAccountCashOutById(id);
+                return ResponseMessage(cashOut == null
                     ? Request.CreateResponse(HttpStatusCode.NotFound)
-                    : Request.CreateResponse(HttpStatusCode.OK, CashOut));
+                    : Request.CreateResponse(HttpStatusCode.OK, cashOut));
             }
             catch (Exception e)
             {
@@ -49,11 +47,11 @@ namespace APILayer.Controllers
 
         [HttpPost]
         [Route("api/AccountCashOuts")]
-        public IHttpActionResult Post([FromBody] AccountCashOutDto AccountCashOut)
+        public IHttpActionResult Post([FromBody] AccountCashOutDto accountCashOutDto)
         {
             try
             {
-                var isAdded = AccountCashOutServices.AddAccountCashOut(AccountCashOut);
+                var isAdded = AccountCashOutServices.AddAccountCashOut(accountCashOutDto);
                 return ResponseMessage(isAdded
                     ? Request.CreateResponse(HttpStatusCode.Created)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));
@@ -68,11 +66,11 @@ namespace APILayer.Controllers
 
         [HttpPatch]
         [Route("api/AccountCashOuts")]
-        public IHttpActionResult Patch([FromBody] AccountCashOutDto AccountCashOut)
+        public IHttpActionResult Patch([FromBody] AccountCashOutDto accountCashOutDto)
         {
             try
             {
-                var isUpdated = AccountCashOutServices.UpdateAccountCashOut(AccountCashOut);
+                var isUpdated = AccountCashOutServices.UpdateAccountCashOut(accountCashOutDto);
                 return ResponseMessage(isUpdated
                     ? Request.CreateResponse(HttpStatusCode.OK)
                     : Request.CreateResponse(HttpStatusCode.BadRequest));

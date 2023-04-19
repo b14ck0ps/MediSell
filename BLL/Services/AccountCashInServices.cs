@@ -1,12 +1,8 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using BLL.DTOs;
 using DAL;
 using DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -14,37 +10,37 @@ namespace BLL.Services
     {
         public static List<AccountCashInDto> GetAllAccountCashIns()
         {
-            var AccountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
-            var CashIn = Mapper.Map(AccountCashInRepository.GetAll(), new List<AccountCashInDto> ());
-            return CashIn;
+            var accountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
+            var cashIn = Mapper.Map(accountCashInRepository.GetAll(), new List<AccountCashInDto>());
+            return cashIn;
         }
 
         public static AccountCashInDto GetAccountCashInById(int id)
         {
-            var AccountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
-            var CashIn = Mapper.Map(AccountCashInRepository.GetById(id), new AccountCashInDto());
-            return CashIn;
+            var accountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
+            var cashIn = Mapper.Map(accountCashInRepository.GetById(id), new AccountCashInDto());
+            return cashIn;
         }
 
-        public static bool AddAccountCashIn(AccountCashInDto AccountCashIn)
+        public static bool AddAccountCashIn(AccountCashInDto accountCashIn)
         {
-            var AccountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
-            var AccountCashInToAdd = Mapper.Map(AccountCashIn, new AccountCashIn());
-            return AccountCashInRepository.Add(AccountCashInToAdd);
+            var accountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
+            var accountCashInToAdd = Mapper.Map(accountCashIn, new AccountCashIn());
+            return accountCashInRepository.Add(accountCashInToAdd);
         }
 
-        public static bool UpdateAccountCashIn(AccountCashInDto AccountCashIn)
+        public static bool UpdateAccountCashIn(AccountCashInDto accountCashInDto)
         {
-            var AccountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
-            var AccountCashInToUpdate = Mapper.Map(AccountCashIn, new AccountCashIn());
-            return AccountCashInRepository.Update(AccountCashInToUpdate);
+            var accountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
+            var accountCashInToUpdate = Mapper.Map(accountCashInDto, new AccountCashIn());
+            return accountCashInRepository.Update(accountCashInToUpdate);
         }
 
 
         public static bool DeleteAccountCashIn(int id)
         {
-            var AccountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
-            return AccountCashInRepository.Delete(id);
+            var accountCashInRepository = DataAccessFactory.GetAccountCashInRepository();
+            return accountCashInRepository.Delete(id);
         }
     }
 }
