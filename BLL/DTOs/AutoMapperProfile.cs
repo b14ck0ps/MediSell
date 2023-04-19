@@ -18,6 +18,12 @@ namespace BLL.DTOs
 
             CreateMap<DeliveryMan, DeliveryManDto>();
             CreateMap<DeliveryManDto, DeliveryMan>();
+
+            CreateMap<DeliveryStatus, DeliveryStatusDto>();
+            CreateMap<DeliveryStatusDto, DeliveryStatus>();
+
+            CreateMap<PaymentMethod, PaymentMethodDto>();
+            CreateMap<PaymentMethodDto, PaymentMethod>();
         }
     }
 }
