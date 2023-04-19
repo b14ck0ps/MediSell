@@ -13,7 +13,7 @@ namespace APILayer.Controllers
     {
         //Get all company
         [HttpGet]
-        [Route("api/companies")]
+        [Route("api/company")]
         public IHttpActionResult Get()
         {
             try
@@ -48,7 +48,7 @@ namespace APILayer.Controllers
 
         //addCompany
         [HttpPost]
-        [Route("api/addcompany")]
+        [Route("api/company")]
         public IHttpActionResult Post([FromBody] CompanyDto company)
         {
             try
@@ -66,7 +66,7 @@ namespace APILayer.Controllers
         }
         //Update Company
         [HttpPatch]
-        [Route("api/company/update")]
+        [Route("api/company")]
         public IHttpActionResult Patch([FromBody] CompanyDto company)
         {
             try
@@ -84,7 +84,7 @@ namespace APILayer.Controllers
         }
         //Delete Company
         [HttpDelete]
-        [Route("api/company/delete/{id}")]
+        [Route("api/company/{id}")]
         public IHttpActionResult Delete(int id)
         {
             try

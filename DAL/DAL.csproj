@@ -76,6 +76,7 @@
     <Compile Include="Models\Profit.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\CompanyRepository.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="Repository\ProductOrderRepository.cs" />

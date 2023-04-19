@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\AutoMapperProfile.cs" />
+    <Compile Include="DTOs\CategoryDto.cs" />
     <Compile Include="DTOs\CompanyDto.cs" />
     <Compile Include="DTOs\Enums\Gender.cs" />
     <Compile Include="DTOs\Enums\Role.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="DTOs\ProductsOrderDto.cs" />
     <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CategoryServices.cs" />
     <Compile Include="Services\CompanyServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\ProductOrderService.cs" />
