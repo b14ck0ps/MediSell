@@ -21,6 +21,14 @@ namespace BLL.DTOs
 
             CreateMap<Category, CategoryDto>();
             CreateMap<CategoryDto, Category>();
+            CreateMap<Profit, ProfitDto>();
+            CreateMap<ProfitDto, Profit>();
+
+            CreateMap<AccountCashIn, AccountCashInDto>();
+            CreateMap<AccountCashInDto, AccountCashIn>();
+
+            CreateMap<AccountCashOut, AccountCashOutDto>();
+            CreateMap<AccountCashOutDto, AccountCashOut>();
         }
     }
 }

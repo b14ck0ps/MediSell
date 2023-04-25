@@ -78,8 +78,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\CompanyRepository.cs" />
+    <Compile Include="Repository\AccountCashInRepository.cs" />
+    <Compile Include="Repository\AccountCashOutRepository.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="Repository\ProductOrderRepository.cs" />
+    <Compile Include="Repository\ProfitRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\Database.cs" />
   </ItemGroup>
