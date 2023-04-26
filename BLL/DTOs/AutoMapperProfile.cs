@@ -19,6 +19,14 @@ namespace BLL.DTOs
             CreateMap<ProductsOrder, ProductsOrderDto>();
             CreateMap<ProductsOrderDto, ProductsOrder>();
 
+            CreateMap<DeliveryMan, DeliveryManDto>();
+            CreateMap<DeliveryManDto, DeliveryMan>();
+
+            CreateMap<DeliveryStatus, DeliveryStatusDto>();
+            CreateMap<DeliveryStatusDto, DeliveryStatus>();
+
+            CreateMap<PaymentMethod, PaymentMethodDto>();
+            CreateMap<PaymentMethodDto, PaymentMethod>();
             CreateMap<Category, CategoryDto>();
             CreateMap<CategoryDto, Category>();
             CreateMap<Profit, ProfitDto>();

@@ -100,11 +100,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DeliveryManController.cs" />
+    <Compile Include="Controllers\DeliveryStatusController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\AccountCashInController.cs" />
     <Compile Include="Controllers\AccountCashOutController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\PaymentMethodController.cs" />
     <Compile Include="Controllers\ProductOrderController.cs" />
     <Compile Include="Controllers\ProfitController.cs" />
     <Compile Include="Controllers\UserController.cs" />
