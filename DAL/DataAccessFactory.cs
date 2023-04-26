@@ -14,6 +14,11 @@ namespace DAL
         public static IReopsitory<DeliveryMan, int, bool> GetDeliveryManRepository() => new DeliveryManRepository();
         public static IReopsitory<DeliveryStatus, int, bool> GetDeliveryStatusRepository() => new DeliveryStatusRepository();
         public static IReopsitory<PaymentMethod, int, bool> GetPaymentMethodRepository() => new PaymentMethodRepository();
+        public static IReopsitory<Company, int, bool> GetCompanyRepository() => new CompanyRepository();
+        public static IReopsitory<Category, int, bool> GetCategoryRepository() => new CategoryRepository();
+        public static IReopsitory<Profit, int, bool> GetProfitRepository() => new ProfitRepository();
+        public static IReopsitory<AccountCashIn, int, bool> GetAccountCashInRepository() => new AccountCashInRepository();
+        public static IReopsitory<AccountCashOut, int, bool> GetAccountCashOutRepository() => new AccountCashOutRepository();
 
     }
 }

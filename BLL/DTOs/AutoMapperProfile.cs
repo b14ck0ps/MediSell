@@ -10,6 +10,9 @@ namespace BLL.DTOs
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
 
+            CreateMap<Company, CompanyDto>();
+            CreateMap<CompanyDto, Company>();
+
             CreateMap<Order, OrderDto>();
             CreateMap<OrderDto, Order>();
 
@@ -24,6 +27,16 @@ namespace BLL.DTOs
 
             CreateMap<PaymentMethod, PaymentMethodDto>();
             CreateMap<PaymentMethodDto, PaymentMethod>();
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
+            CreateMap<Profit, ProfitDto>();
+            CreateMap<ProfitDto, Profit>();
+
+            CreateMap<AccountCashIn, AccountCashInDto>();
+            CreateMap<AccountCashInDto, AccountCashIn>();
+
+            CreateMap<AccountCashOut, AccountCashOutDto>();
+            CreateMap<AccountCashOutDto, AccountCashOut>();
         }
     }
 }
