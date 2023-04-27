@@ -105,6 +105,7 @@
     <Compile Include="Controllers\AccountCashInController.cs" />
     <Compile Include="Controllers\AccountCashOutController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductOrderController.cs" />
     <Compile Include="Controllers\ProfitController.cs" />
     <Compile Include="Controllers\UserController.cs" />
