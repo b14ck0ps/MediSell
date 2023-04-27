@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BLL.DTOs;
 using BLL.Services;
 
 namespace APILayer.Controllers
@@ -48,6 +49,51 @@ namespace APILayer.Controllers
             {
                 var orders = OrderServices.GetAllOrdersByCustomerId(id);
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.OK, orders));
+            }
+            catch (Exception e)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.InternalServerError, e.Message));
+            }
+        }
+
+        [HttpPost]
+        [Route("api/order")]
+        public IHttpActionResult AddOrder([FromBody] OrderDto order)
+        {
+            try
+            {
+                var result = OrderServices.AddOrder(order);
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.OK, result));
+            }
+            catch (Exception e)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.InternalServerError, e.Message));
+            }
+        }
+
+        [HttpPut]
+        [Route("api/order")]
+        public IHttpActionResult UpdateOrder([FromBody] OrderDto order)
+        {
+            try
+            {
+                var result = OrderServices.UpdateOrder(order);
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.OK, result));
+            }
+            catch (Exception e)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.InternalServerError, e.Message));
+            }
+        }
+
+        [HttpDelete]
+        [Route("api/order/{id}")]
+        public IHttpActionResult DeleteOrder(int id)
+        {
+            try
+            {
+                var result = OrderServices.DeleteOrder(id);
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.OK, result));
             }
             catch (Exception e)
             {

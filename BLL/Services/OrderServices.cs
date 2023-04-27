@@ -34,6 +34,8 @@ namespace BLL.Services
 
         public static bool AddOrder(OrderDto order)
         {
+            order.OderDate = System.DateTime.Now;
+
             var orderRepository = DataAccessFactory.GetOrderRepository();
             var orderToAdd = Mapper.Map(order, new Order());
             return orderRepository.Add(orderToAdd);
