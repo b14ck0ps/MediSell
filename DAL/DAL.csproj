@@ -76,11 +76,14 @@
     <Compile Include="Models\Profit.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DeliveryManRepository.cs" />
+    <Compile Include="Repository\DeliveryStatusRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\CompanyRepository.cs" />
     <Compile Include="Repository\AccountCashInRepository.cs" />
     <Compile Include="Repository\AccountCashOutRepository.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
+    <Compile Include="Repository\PaymentMethodRepository.cs" />
     <Compile Include="Repository\ProductOrderRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\ProfitRepository.cs" />
