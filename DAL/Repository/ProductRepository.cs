@@ -12,27 +12,28 @@ namespace DAL.Repository
     {
         public bool Add(Product entity)
         {
-            throw new NotImplementedException();
+            Context.Products.Add(entity);
+            return Context.SaveChanges() > 0;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var product = GetById(id);
+            if (product == null) return false;
+            Context.Products.Remove(product);
+            return Context.SaveChanges() > 0;
         }
 
-        public List<Product> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        public List<Product> GetAll() => Context.Products.ToList();
 
-        public Product GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public Product GetById(int id) => Context.Products.FirstOrDefault(p => p.Id == id);
 
         public bool Update(Product entity)
         {
-            throw new NotImplementedException();
+            var product = GetById(entity.Id);
+            if (product == null) return false;
+            Context.Entry(product).CurrentValues.SetValues(entity);
+            return Context.SaveChanges() > 0;
         }
     }
 }
