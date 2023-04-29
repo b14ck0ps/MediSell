@@ -85,6 +85,7 @@
     <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="Repository\PaymentMethodRepository.cs" />
     <Compile Include="Repository\ProductOrderRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\ProfitRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\Database.cs" />

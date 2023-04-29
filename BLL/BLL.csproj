@@ -55,6 +55,7 @@
     <Compile Include="DTOs\Enums\Gender.cs" />
     <Compile Include="DTOs\Enums\Role.cs" />
     <Compile Include="DTOs\OrderDto.cs" />
+    <Compile Include="DTOs\ProductDto.cs" />
     <Compile Include="DTOs\PaymentMethodDto.cs" />
     <Compile Include="DTOs\ProductsOrderDto.cs" />
     <Compile Include="DTOs\ProfitDto.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\PaymentMethodServices.cs" />
     <Compile Include="Services\ProductOrderService.cs" />
+    <Compile Include="Services\ProductServices.cs" />
     <Compile Include="Services\ProfitServices.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
