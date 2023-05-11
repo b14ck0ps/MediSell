@@ -28,7 +28,7 @@ namespace BLL.Services
         {
             var tokenRepository = DataAccessFactory.GetTokenRepository();
             var tokenObj = tokenRepository.GetById(token);
-            if (tokenObj?.DeletedAt == null) return false;
+            if (tokenObj == null || tokenObj.DeletedAt != null) return false;
             var user = DataAccessFactory.GetUserRepository().GetById(tokenObj.UserId);
             return user != null;
         }

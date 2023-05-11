@@ -9,8 +9,9 @@ namespace APILayer.Auth
     {
         public override void OnAuthorization(HttpActionContext actionContext)
         {
-            var token = actionContext.Request.Headers.Authorization?.Parameter;
-            if (token == null || !AuthService.IsTokenValid(token) || !AuthService.IsCustomer(token))
+            var token = actionContext.Request.Headers.Authorization;
+            if (token == null || !AuthService.IsTokenValid(token.ToString()) ||
+                !AuthService.IsCustomer(token.ToString()))
             {
                 actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized);
                 return;
