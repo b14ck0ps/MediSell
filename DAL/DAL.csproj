@@ -53,10 +53,15 @@
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IReopsitory.cs" />
     <Compile Include="Migrations\202304060812430_initdb.cs" />
     <Compile Include="Migrations\202304060812430_initdb.designer.cs">
       <DependentUpon>202304060812430_initdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305111408248_TokenTableForWebToken.cs" />
+    <Compile Include="Migrations\202305111408248_TokenTableForWebToken.designer.cs">
+      <DependentUpon>202305111408248_TokenTableForWebToken.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountCashIn.cs" />
@@ -74,6 +79,7 @@
     <Compile Include="Models\ProductsOrder.cs" />
     <Compile Include="Models\ProductsReview.cs" />
     <Compile Include="Models\Profit.cs" />
+    <Compile Include="Models\Token.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DeliveryManRepository.cs" />
@@ -87,6 +93,7 @@
     <Compile Include="Repository\ProductOrderRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\ProfitRepository.cs" />
+    <Compile Include="Repository\TokenRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\Database.cs" />
   </ItemGroup>
@@ -97,6 +104,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202304060812430_initdb.resx">
       <DependentUpon>202304060812430_initdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305111408248_TokenTableForWebToken.resx">
+      <DependentUpon>202305111408248_TokenTableForWebToken.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,8 +5,14 @@ using DAL.Models;
 
 namespace DAL.Repository
 {
-    public class UserRepository : Database, IReopsitory<User, int, bool>
+    public class UserRepository : Database, IAuth<bool>
     {
+        public bool Authenticate(string email, string password)
+        {
+            var user = Context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            return user != null;
+        }
+
         public bool Add(User entity)
         {
             Context.Users.Add(entity);
@@ -30,6 +36,7 @@ namespace DAL.Repository
         }
 
         public User GetById(int id) => Context.Users.FirstOrDefault(u => u.Id == id);
+        public User GetByEmail(string email) => Context.Users.FirstOrDefault(u => u.Email == email);
 
         public List<User> GetAll() => Context.Users.ToList();
     }

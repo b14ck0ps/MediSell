@@ -100,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Auth\AdminAccess.cs" />
+    <Compile Include="Auth\CustomerAccess.cs" />
+    <Compile Include="Auth\DeliveryAccess.cs" />
+    <Compile Include="Auth\FinanceAccess.cs" />
+    <Compile Include="Auth\Logged.cs" />
+    <Compile Include="Controllers\AuthController\UserLogController.cs" />
     <Compile Include="Controllers\DeliveryManController.cs" />
     <Compile Include="Controllers\DeliveryStatusController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />

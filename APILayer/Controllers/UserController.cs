@@ -2,11 +2,13 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using APILayer.Auth;
 using BLL.DTOs;
 using BLL.Services;
 
 namespace APILayer.Controllers
 {
+    [Logged]
     public class UserController : ApiController
     {
         [HttpGet]
