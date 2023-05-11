@@ -24,7 +24,7 @@ namespace BLL.Services
             return Mapper.Map(token, new TokenDTO());
         }
 
-        private static bool IsTokenValid(string token)
+        public static bool IsTokenValid(string token)
         {
             var tokenRepository = DataAccessFactory.GetTokenRepository();
             var tokenObj = tokenRepository.GetById(token);
