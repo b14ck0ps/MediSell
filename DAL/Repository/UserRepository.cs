@@ -36,6 +36,7 @@ namespace DAL.Repository
         }
 
         public User GetById(int id) => Context.Users.FirstOrDefault(u => u.Id == id);
+        public User GetByEmail(string email) => Context.Users.FirstOrDefault(u => u.Email == email);
 
         public List<User> GetAll() => Context.Users.ToList();
     }

@@ -41,5 +41,11 @@ namespace BLL.Services
             var userRepository = DataAccessFactory.GetUserRepository();
             return userRepository.Delete(id);
         }
+
+        public static UserDto GetUserByEmail(string email)
+        {
+            var userRepository = DataAccessFactory.GetUserRepository();
+            return Mapper.Map(userRepository.GetByEmail(email), new UserDto());
+        }
     }
 }
