@@ -54,6 +54,7 @@
     <Compile Include="DTOs\CompanyDto.cs" />
     <Compile Include="DTOs\Enums\Gender.cs" />
     <Compile Include="DTOs\Enums\Role.cs" />
+    <Compile Include="DTOs\LoginDto.cs" />
     <Compile Include="DTOs\OrderDto.cs" />
     <Compile Include="DTOs\ProductDto.cs" />
     <Compile Include="DTOs\PaymentMethodDto.cs" />
