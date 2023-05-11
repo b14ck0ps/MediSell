@@ -22,6 +22,7 @@ namespace DAL
         public DbSet<AccountCashOut> AccountCashOuts { get; set; }
         public DbSet<Profit> Profits { get; set; }
         public DbSet<ProductsReview> ProductsReviews { get; set; }
+        public DbSet<Token> Tokens { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
