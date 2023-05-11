@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IReopsitory.cs" />
     <Compile Include="Migrations\202304060812430_initdb.cs" />
     <Compile Include="Migrations\202304060812430_initdb.designer.cs">
