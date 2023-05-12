@@ -8,11 +8,11 @@ using BLL.Services;
 
 namespace APILayer.Controllers
 {
-    [Logged]
     public class UserController : ApiController
     {
         [HttpGet]
         [Route("api/users")]
+        [Logged]
         public IHttpActionResult Get()
         {
             try
@@ -30,6 +30,7 @@ namespace APILayer.Controllers
 
         [HttpGet]
         [Route("api/user/{id}")]
+        [Logged]
         public IHttpActionResult Get(int id)
         {
             try
@@ -46,7 +47,6 @@ namespace APILayer.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [Route("api/user")]
         public IHttpActionResult Post([FromBody] UserDto customer)
         {
@@ -65,6 +65,7 @@ namespace APILayer.Controllers
         }
 
         [HttpPatch]
+        [Logged]
         [Route("api/user")]
         public IHttpActionResult Patch([FromBody] UserDto customer)
         {
@@ -83,6 +84,8 @@ namespace APILayer.Controllers
         }
 
         [HttpDelete]
+        [Logged]
+        [AdminAccess]
         [Route("api/user/{id}")]
         public IHttpActionResult Delete(int id)
         {
