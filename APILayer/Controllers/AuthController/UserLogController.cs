@@ -27,6 +27,23 @@ namespace APILayer.Controllers.AuthController
             }
         }
 
+        [HttpPost]
+        [Route("api/auth/token")]
+        public IHttpActionResult IsTokenValid([FromBody] TokenDTO token)
+        {
+            try
+            {
+                var isValid = AuthService.IsTokenValid(token.TKey);
+                return ResponseMessage(isValid
+                    ? Request.CreateResponse(HttpStatusCode.OK)
+                    : Request.CreateResponse(HttpStatusCode.NotFound));
+            }
+            catch (Exception e)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, e.Message));
+            }
+        }
+
         [HttpGet]
         [Logged]
         [Route("api/auth/logout")]
