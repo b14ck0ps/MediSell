@@ -46,6 +46,7 @@ namespace APILayer.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("api/user")]
         public IHttpActionResult Post([FromBody] UserDto customer)
         {
