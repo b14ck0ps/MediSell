@@ -44,6 +44,23 @@ namespace APILayer.Controllers.AuthController
             }
         }
 
+        [HttpPost]
+        [Route("api/auth/user")]
+        public IHttpActionResult GetUserByToken([FromBody] TokenDTO token)
+        {
+            try
+            {
+                var user = AuthService.GetAuthUserDto(token.TKey);
+                return ResponseMessage(user == null
+                    ? Request.CreateResponse(HttpStatusCode.NotFound)
+                    : Request.CreateResponse(HttpStatusCode.OK, user));
+            }
+            catch (Exception e)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, e.Message));
+            }
+        }
+
         [HttpGet]
         [Logged]
         [Route("api/auth/logout")]

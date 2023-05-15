@@ -47,6 +47,8 @@ namespace BLL.Services
                 .GetById(DataAccessFactory.GetTokenRepository().GetById(token).UserId)
             : null;
 
+        public static UserDto GetAuthUserDto(string token) => Mapper.Map(GetAuthUser(token), new UserDto());
+
         public static bool IsAdmin(string token) => GetAuthUser(token)?.Role == Role.Admin;
         public static bool IsCustomer(string token) => GetAuthUser(token)?.Role == Role.Customer;
         public static bool IsDeliveryMan(string token) => GetAuthUser(token)?.Role == Role.Delivery;
