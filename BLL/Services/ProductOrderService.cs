@@ -6,7 +6,7 @@ using DAL.Models;
 
 namespace BLL.Services
 {
-    public class ProductOrderService
+    public static class ProductOrderService
     {
         public static List<ProductsOrderDto> GetAllProductsOrder()
         {
@@ -22,11 +22,17 @@ namespace BLL.Services
             return productOrder;
         }
 
-        public static bool AddProductOrder(ProductsOrderDto productOrder)
+        public static bool AddProductOrders(List<ProductsOrderDto> productOrders)
         {
             var repository = DataAccessFactory.GetProductOrderRepository();
-            var productOrderToAdd = Mapper.Map(productOrder, new ProductsOrder());
-            return repository.Add(productOrderToAdd);
+            var ordersToAdd = Mapper.Map<List<ProductsOrderDto>, List<ProductsOrder>>(productOrders);
+
+            foreach (var order in ordersToAdd)
+            {
+                repository.Add(order);
+            }
+
+            return true;
         }
 
         public static bool UpdateProductOrder(ProductsOrderDto productOrder)

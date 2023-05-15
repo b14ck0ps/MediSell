@@ -32,26 +32,29 @@ namespace BLL.Services
             return ordersByCustomerId;
         }
 
-        public static bool AddOrder(OrderDto order)
+        public static int AddOrder(OrderDto order)
         {
             order.OderDate = System.DateTime.Now;
 
             var orderRepository = DataAccessFactory.GetOrderRepository();
             var orderToAdd = Mapper.Map(order, new Order());
-            return orderRepository.Add(orderToAdd);
+            var newOrder = orderRepository.Add(orderToAdd);
+            return newOrder.Id;
         }
 
         public static bool UpdateOrder(OrderDto order)
         {
             var orderRepository = DataAccessFactory.GetOrderRepository();
             var orderToUpdate = Mapper.Map(order, new Order());
-            return orderRepository.Update(orderToUpdate);
+            orderRepository.Update(orderToUpdate);
+            return true;
         }
 
         public static bool DeleteOrder(int id)
         {
             var orderRepository = DataAccessFactory.GetOrderRepository();
-            return orderRepository.Delete(id);
+            orderRepository.Delete(id);
+            return true;
         }
 
         private static bool IsCustomerExist(int id) => DataAccessFactory.GetUserRepository().GetById(id) != null;

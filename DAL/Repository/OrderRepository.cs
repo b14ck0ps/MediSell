@@ -5,28 +5,31 @@ using DAL.Models;
 
 namespace DAL.Repository
 {
-    public class OrderRepository : Database, IReopsitory<Order, int, bool>
+    public class OrderRepository : Database, IReopsitory<Order, int, Order>
     {
-        public bool Add(Order entity)
+        public Order Add(Order entity)
         {
             Context.Orders.Add(entity);
-            return Context.SaveChanges() > 0;
+            Context.SaveChanges();
+            return entity;
         }
 
-        public bool Update(Order entity)
+        public Order Update(Order entity)
         {
             var order = GetById(entity.Id);
-            if (order == null) return false;
+            if (order == null) return null;
             Context.Entry(order).CurrentValues.SetValues(entity);
-            return Context.SaveChanges() > 0;
+            Context.SaveChanges();
+            return entity;
         }
 
-        public bool Delete(int id)
+        public Order Delete(int id)
         {
             var order = GetById(id);
-            if (order == null) return false;
+            if (order == null) return null;
             Context.Orders.Remove(order);
-            return Context.SaveChanges() > 0;
+            Context.SaveChanges();
+            return order;
         }
 
         public Order GetById(int id) => Context.Orders.FirstOrDefault(o => o.Id == id);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -41,11 +42,11 @@ namespace APILayer.Controllers
 
         [HttpPost]
         [Route("api/productorder")]
-        public IHttpActionResult AddProductOrder([FromBody] ProductsOrderDto productOrder)
+        public IHttpActionResult AddProductOrder([FromBody] List<ProductsOrderDto> productOrder)
         {
             try
             {
-                var result = ProductOrderService.AddProductOrder(productOrder);
+                var result = ProductOrderService.AddProductOrders(productOrder);
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.OK, result));
             }
             catch (Exception e)
