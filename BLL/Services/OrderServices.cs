@@ -39,6 +39,17 @@ namespace BLL.Services
             var orderRepository = DataAccessFactory.GetOrderRepository();
             var orderToAdd = Mapper.Map(order, new Order());
             var newOrder = orderRepository.Add(orderToAdd);
+            var user = UserServices.GetuserById(order.OrderedBy);
+            //Send Email To Customer
+            var html = $"" +
+                       $"<h1>Order # {newOrder.Id} Placed Successfully</h1>" +
+                       $"<h3> Order Date: {newOrder.OderDate}</h3>" +
+                       $"<h3> Order Total: {newOrder.Total} Taka</h3>" +
+                       $"For Detail visit: <a href='http://localhost:3000/order/{newOrder.Id}'>Click Here</a>";
+
+            EmailService.SendEmail(fromAddress: MedicellEmail, toAddress: user.Email,
+                subject: "Order Placed Successfully", htmlBody: html);
+
             return newOrder.Id;
         }
 
@@ -58,5 +69,6 @@ namespace BLL.Services
         }
 
         private static bool IsCustomerExist(int id) => DataAccessFactory.GetUserRepository().GetById(id) != null;
+        private const string MedicellEmail = "medicell@Real.org";
     }
 }
