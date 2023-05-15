@@ -71,6 +71,7 @@
     <Compile Include="Services\AccountCashInServices.cs" />
     <Compile Include="Services\AccountCashOutServices.cs" />
     <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\HtmlBodyGenerator.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\PaymentMethodServices.cs" />
     <Compile Include="Services\ProductOrderService.cs" />
