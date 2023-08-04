@@ -2,7 +2,7 @@
 
 Medisell is an online platform that enables the customers to buy medicines from the comfort of their homes. The platform
 consists of a web application built using .NET Framework 4.8.1 with Web API and follows a 3-tier architecture. The
-application uses Entity Framework 6 Code First to communicate with a MSSQL database. The [Frontend](https://github.com/b14ck0ps/medicell-frontend) is made with NextJS and Tailwind. 
+application uses Entity Framework 6 Code First to communicate with a MSSQL database. The [Frontend](https://github.com/b14ck0ps/medicell-frontend) 🎨 is made with NextJS and Tailwind. 
 Please visit the frontend link for Demo.
 
 ## User Roles
